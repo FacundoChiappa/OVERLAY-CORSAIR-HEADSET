@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon></ApplicationIcon>
+	<LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\mariu\.nuget\packages\hidapiadapter\1.0.5\contentFiles\any\netstandard2.0\hidapi32.dll" />
+    <Content Remove="C:\Users\mariu\.nuget\packages\hidapiadapter\1.0.5\contentFiles\any\netstandard2.0\hidapi64.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="icon\headset.ico" />
+    <None Remove="images\charging.png" />
+    <None Remove="images\empty.png" />
+    <None Remove="images\full.png" />
+    <None Remove="images\low.png" />
+    <None Remove="images\middle-50.png" />
+    <None Remove="images\middle-75.png" />
+    <None Remove="predefined_configurations.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HidApiAdapter" Version="1.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icon\headset.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\charging.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\empty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\low.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\middle-50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\middle-75.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="predefined_configurations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="icon\discharging-00.ico" />
+    <None Remove="icon\discharging-100.ico" />
+    <None Remove="icon\discharging-25.ico" />
+    <None Remove="icon\discharging-50.ico" />
+    <None Remove="icon\discharging-75.ico" />
+    <None Remove="icon\battery-white-00.ico" />
+    <Resource Include="icon\battery-white-00.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-10.ico" />
+    <Resource Include="icon\battery-white-10.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-100.ico" />
+    <Resource Include="icon\battery-white-100.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-25.ico" />
+    <Resource Include="icon\battery-white-25.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-50.ico" />
+    <Resource Include="icon\battery-white-50.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-75.ico" />
+    <Resource Include="icon\battery-white-75.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="icon\battery-white-90.ico" />
+    <Resource Include="icon\battery-white-90.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="hidapi32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="hidapi64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
